@@ -19,3 +19,6 @@ cp wso2is-5.2.0/repository/conf/registry.xml ../wso2is-5.2.0/repository/conf/reg
 cp wso2am-2.0.0/repository/conf/user-mgt.xml ../wso2is-5.2.0/repository/conf/user-mgt.xml
 cp wso2am-2.0.0/repository/conf/user-mgt.xml ../wso2am-2.0.0/repository/conf/user-mgt.xml
 
+# Copy Jar file into both AM and IDS
+cp postgresql-9.4.1211.jar ../wso2am-2.0.0/repository/components/lib/postgresql-9.4.1211.jar
+cp postgresql-9.4.1211.jar ../wso2is-5.2.0/repository/components/lib/postgresql-9.4.1211.jar
