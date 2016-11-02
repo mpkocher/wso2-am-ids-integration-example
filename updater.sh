@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Update the carbon.xml of ICS to run carbon on 9444 (offset=1)
 cp wso2is-5.2.0/repository/conf/carbon.xml ../wso2is-5.2.0/repository/conf/carbon.xml
 
@@ -25,3 +27,8 @@ cp wso2am-2.0.0/repository/conf/user-mgt.xml ../wso2am-2.0.0/repository/conf/use
 # Copy Jar file into both AM and IDS
 cp postgresql-9.4.1211.jar ../wso2am-2.0.0/repository/components/lib/postgresql-9.4.1211.jar
 cp postgresql-9.4.1211.jar ../wso2is-5.2.0/repository/components/lib/postgresql-9.4.1211.jar
+
+
+cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_AuthorizeAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_AuthorizeAPI_.xml
+cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_RevokeAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_RevokeAPI_.xml
+cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_TokenAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_TokenAPI_.xml
