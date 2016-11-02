@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+# Update master-datasources.xml
 cp wso2am-2.0.0/repository/conf/datasources/master-datasources.xml ../wso2am-2.0.0/repository/conf/datasources/master-datasources.xml
 cp wso2is-5.2.0/repository/conf/datasources/master-datasources.xml ../wso2is-5.2.0/repository/conf/datasources/master-datasources.xml
 
@@ -9,4 +12,10 @@ cp wso2am-2.0.0/repository/conf/identity/identity.xml ../wso2is-5.2.0/repository
 cp wso2am-2.0.0/repository/conf/api-manager.xml ../wso2am-2.0.0/repository/conf/api-manager.xml
 cp wso2am-2.0.0/repository/conf/api-manager.xml ../wso2is-5.2.0/repository/conf/api-manager.xml
 
-# Even
+# Update registry.xml in IDS
+cp wso2is-5.2.0/repository/conf/registry.xml ../wso2is-5.2.0/repository/conf/registry.xml
+
+# Update user-mgt.xml in the IDS and the AM (these need to be in sync)
+cp wso2am-2.0.0/repository/conf/user-mgt.xml ../wso2is-5.2.0/repository/conf/user-mgt.xml
+cp wso2am-2.0.0/repository/conf/user-mgt.xml ../wso2am-2.0.0/repository/conf/user-mgt.xml
+
