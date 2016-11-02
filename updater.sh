@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Update the carbon.xml of ICS to run carbon on 9444 (offset=1)
+cp wso2is-5.2.0/repository/conf/carbon.xml ../wso2is-5.2.0/repository/conf/carbon.xml
+
 # Update master-datasources.xml
 cp wso2am-2.0.0/repository/conf/datasources/master-datasources.xml ../wso2am-2.0.0/repository/conf/datasources/master-datasources.xml
 cp wso2is-5.2.0/repository/conf/datasources/master-datasources.xml ../wso2is-5.2.0/repository/conf/datasources/master-datasources.xml
