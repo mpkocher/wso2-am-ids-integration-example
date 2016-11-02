@@ -38,7 +38,7 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:posgresql://localhost:5432/apimgt</url>
+                    <url>jdbc:postgresql://localhost:5432/apimgt</url>
                     <username>apiuser</username>
                     <password>apimanager</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
@@ -60,7 +60,7 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:posgresql://localhost:5432/registry</url>
+                    <url>jdbc:postgresql://localhost:5432/registry</url>
                     <username>apiuser</username>
                     <password>apimanager</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
@@ -82,7 +82,7 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:posgresql://localhost:5432/userstore</url>
+                    <url>jdbc:postgresql://localhost:5432/userstore</url>
                     <username>apiuser</username>
                     <password>apimanager</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
