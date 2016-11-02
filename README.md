@@ -1,12 +1,13 @@
 # Example of using WSO2 Identity Server with API Manager
 
-Identity Server is on 9444 (offset=1)
-API Manager is on 9443
+- Identity Server is on 9444 (offset=1)
+- API Manager is on 9443
+- Postgresql (9.6.0) configured on 5432
 
-Postgresql (9.6.0) configured on 5432
+db Credentials
 
-user: apiuser
-password: apimanager
+- user: apiuser
+- password: apimanager
 
 
 ## Requirements
@@ -15,6 +16,8 @@ password: apimanager
 - wso2is-5.2.0 (Direct unzipped from WSO2)
 - postgresql-9.4.1211.jar  (https://jdbc.postgresql.org/download/postgresql-9.4.1211.jar)
 
+
+## Directory Layout
 
 rootdir
 
