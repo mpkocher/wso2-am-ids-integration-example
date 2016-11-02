@@ -221,7 +221,8 @@
         <ThriftClientConnectionTimeOut>10000</ThriftClientConnectionTimeOut>
         <!--ThriftClientPort>10397</ThriftClientPort-->
 
-        <EnableThriftServer>true</EnableThriftServer>
+	<!-- Changed by MK to false -->
+        <EnableThriftServer>false</EnableThriftServer>
         <ThriftServerHost>localhost</ThriftServerHost>
         <!--ThriftServerPort>10397</ThriftServerPort-->
 
@@ -265,7 +266,8 @@
              In distributed deployment we should configure this property in key manager node by pointing
              gateway https( /http, we recommend users to use 'https' endpoints for security purpose) url.
              Also please note that we should point gateway revoke service to key manager -->
-        <RevokeAPIURL>https://localhost:${https.nio.port}/revoke</RevokeAPIURL>
+	<!-- Changed by MK -->
+	<RevokeAPIURL>https://${GATEWAY_SERVER_HOST}:{port}/revoke</RevokeAPIURL>
         <!-- Whether to encrypt tokens when storing in the Database
         Note: If changing this value to true, change the value of <TokenPersistenceProcessor> to
         org.wso2.carbon.identity.oauth.tokenprocessor.EncryptionDecryptionPersistenceProcessor in the identity.xml -->
@@ -288,7 +290,10 @@
         <URL>https://localhost:${mgt.transport.https.port}/store</URL>
 
         <!-- Server URL of the API Store. -->
+	<!-- Changed by MK 
         <ServerURL>https://localhost:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
+	-->
+	<ServerURL>https://${GATEWAY_SERVER_HOST}:{port}/services/</ServerURL>
         <!-- Admin username for API Store. -->
         <Username>${admin.username}</Username>
 
