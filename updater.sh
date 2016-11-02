@@ -10,7 +10,7 @@ cp wso2am-2.0.0/repository/conf/identity/identity.xml ../wso2is-5.2.0/repository
 
 # update api-manager.xml from AM to IDS
 cp wso2am-2.0.0/repository/conf/api-manager.xml ../wso2am-2.0.0/repository/conf/api-manager.xml
-cp wso2am-2.0.0/repository/conf/api-manager.xml ../wso2is-5.2.0/repository/conf/api-manager.xml
+cp wso2is-5.2.0/repository/conf/api-manager.xml ../wso2is-5.2.0/repository/conf/api-manager.xml
 
 # Update registry.xml in IDS
 cp wso2is-5.2.0/repository/conf/registry.xml ../wso2is-5.2.0/repository/conf/registry.xml
