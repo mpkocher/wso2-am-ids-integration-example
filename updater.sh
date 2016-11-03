@@ -32,3 +32,7 @@ cp postgresql-9.4.1211.jar ../wso2is-5.2.0/repository/components/lib/postgresql-
 cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_AuthorizeAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_AuthorizeAPI_.xml
 cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_RevokeAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_RevokeAPI_.xml
 cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_TokenAPI_.xml ../wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_TokenAPI_.xml
+
+# Add example ldap store and config
+mkdir -p ../wso2am-2.0.0/repository/deployment/server/userstores
+cp wso2am-2.0.0/repository/deployment/server/userstores/forumsys_com.xml ../wso2am-2.0.0/repository/deployment/server/userstores/forumsys_com.xml
