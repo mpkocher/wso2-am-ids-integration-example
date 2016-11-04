@@ -36,3 +36,8 @@ cp wso2am-2.0.0/repository/deployment/server/synapse-configs/default/api/_TokenA
 # Add example ldap store and config
 mkdir -p ../wso2am-2.0.0/repository/deployment/server/userstores
 cp wso2am-2.0.0/repository/deployment/server/userstores/forumsys_com.xml ../wso2am-2.0.0/repository/deployment/server/userstores/forumsys_com.xml
+
+# Set the Log level of AM to DEBUG
+cp wso2am-2.0.0/repository/conf/etc/logging-bridge.properties ../wso2am-2.0.0/repository/conf/etc/logging-bridge.properties
+
+cp wso2is-5.2.0/repository/conf/etc/logging-bridge.properties ../wso2is-5.2.0/repository/conf/etc/logging-bridge.properties
