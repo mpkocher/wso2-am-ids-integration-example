@@ -269,7 +269,7 @@
              gateway https( /http, we recommend users to use 'https' endpoints for security purpose) url.
              Also please note that we should point gateway revoke service to key manager -->
 	<!-- Changed by MK -->
-	<RevokeAPIURL>https://${GATEWAY_SERVER_HOST}:{port}/revoke</RevokeAPIURL>
+	<RevokeAPIURL>https://${GATEWAY_SERVER_HOST}:9444/revoke</RevokeAPIURL>
         <!-- Whether to encrypt tokens when storing in the Database
         Note: If changing this value to true, change the value of <TokenPersistenceProcessor> to
         org.wso2.carbon.identity.oauth.tokenprocessor.EncryptionDecryptionPersistenceProcessor in the identity.xml -->
@@ -295,7 +295,7 @@
 	<!-- Changed by MK 
         <ServerURL>https://localhost:${mgt.transport.https.port}${carbon.context}services/</ServerURL>
 	-->
-	<ServerURL>https://${GATEWAY_SERVER_HOST}:{port}/services/</ServerURL>
+	<ServerURL>https://${GATEWAY_SERVER_HOST}:9444/services/</ServerURL>
         <!-- Admin username for API Store. -->
         <Username>${admin.username}</Username>
 
