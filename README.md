@@ -29,6 +29,10 @@ rootdir
 
 ## Setup
 
+- manually add wilkes plugin to wso2 IDS (http://product-dist.wso2.com/p2/carbon/releases/wilkes/)
 - `setup-db.sql` will create apiuser and necessary tables
 - `create-tables` will initialize the schema for userstore,registry, and apimgt
 - run `updater.sh` will mutate the wso2am-2.0.0 and wso2is-5.2.0 from the git repo custom XML files
+
+
+
