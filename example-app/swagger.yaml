@@ -1,0 +1,58 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "1.0.0"
+  title: Sanity Test App
+
+host: "localhost:5000"
+
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /status:
+    get:
+      description: |
+        gets status of the system
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/StatusMessage'
+          examples:
+            'application/json':
+              message: 'Hello, Status!'
+  /alpha:
+    get:
+      description: |
+        gets Alpha status of the system
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/StatusMessage'
+          examples:
+            'application/json':
+              message: 'Hello, Status!'
+  /beta:
+    get:
+      description: |
+        gets Beta status of the system
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/StatusMessage'
+          examples:
+            'application/json':
+              message: 'Hello, Status!'
+definitions:
+  StatusMessage:
+    required:
+      - message
+    properties:
+        message:
+          type: string
