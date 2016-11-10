@@ -1,7 +1,32 @@
 <?xml version="1.0"?>
 <datasources-configuration xmlns:svns="http://org.wso2.securevault/configuration">
-    <!-- API Manager config -->
-    
+    <!-- API Manager config
+
+    https://docs.wso2.com/display/ADMIN44x/Changing+to+PostgreSQL
+
+    Be sure to remove the element <validationQuery>SELECT 1</validationQuery> and
+    add <defaultAutoCommit>false</defaultAutoCommit>.
+
+    while
+
+    https://wso2.org/jira/browse/REGISTRY-2276
+
+    suggests setting
+
+    <defaultAutoCommit>true</defaultAutoCommit>
+
+
+    MK. The stack trace I'm seeing looks like this:
+
+    Caused by: org.postgresql.util.PSQLException: Cannot change transaction isolation level in the middle of a transaction.
+	at org.postgresql.jdbc.PgConnection.setTransactionIsolation(PgConnection.java:890)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+
+    -->
+
     <providers>
         <provider>org.wso2.carbon.ndatasource.rdbms.RDBMSDataSourceReader</provider>
     </providers>
@@ -23,13 +48,19 @@
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
-                    <validationQuery>SELECT 1</validationQuery>
+                    <!--<validationQuery>SELECT 1</validationQuery>-->
                     <validationInterval>30000</validationInterval>
                 </configuration>
             </definition>
         </datasource>
         
-        <!-- API Manager Setup. Not sure about this -->
+        <!-- API Manager Setup.
+
+        This will be used to keep the identity data and API-related data.
+        This includes OAuth tokens and keys. When serving key-validation requests,
+        the key manager validates whether there are subscriptions made by the particular key.
+
+        -->
         <datasource>
             <name>WSO2AM_DB</name>
             <description>The datasource used for API Manager database</description>
@@ -45,7 +76,7 @@
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
-                    <validationQuery>SELECT 1</validationQuery>
+                    <!--<validationQuery>SELECT 1</validationQuery>-->
                     <validationInterval>30000</validationInterval>
                     <defaultAutoCommit>false</defaultAutoCommit>
                 </configuration>
@@ -67,8 +98,10 @@
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
-                    <validationQuery>SELECT 1</validationQuery>
+                    <!--<validationQuery>SELECT 1</validationQuery>-->
                     <validationInterval>30000</validationInterval>
+                    <!-- Added by MK -->
+                    <defaultAutoCommit>false</defaultAutoCommit>
                 </configuration>
             </definition>
         </datasource>
@@ -89,8 +122,10 @@
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
-                    <validationQuery>SELECT 1</validationQuery>
+                    <!--<validationQuery>SELECT 1</validationQuery>-->
                     <validationInterval>30000</validationInterval>
+                    <!-- Added by MK -->
+                    <defaultAutoCommit>false</defaultAutoCommit>
                 </configuration>
             </definition>
         </datasource>
@@ -114,6 +149,8 @@
                     <validationQuery>SELECT 1</validationQuery>
                     <validationInterval>30000</validationInterval>
                     <defaultAutoCommit>false</defaultAutoCommit>
+                    <!-- Added by MK -->
+                    <defaultAutoCommit>true</defaultAutoCommit>
                 </configuration>
             </definition>
         </datasource>
