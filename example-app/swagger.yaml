@@ -2,19 +2,35 @@
 # Be aware that YAML has indentation based scoping.
 # Code completion support is available so start typing for available options.
 swagger: '2.0'
-
-# This is your document metadata
+schemes:
+  - https
 info:
-  version: "1.0.0"
-  title: Sanity Test App
+  version: 1.0.0
+  description: Example Test Flask App
+  title: FlaskTestApp # This can't have spaces in it
+host: 'localhost:5000'
+basePath: /api/1.0.0
+x-wso2-security:
+  apim:
+    x-wso2-scopes:
+      - roles: 'admin'
+        name: scope-alpha
+        key: scope-alpha
+        description: Test Scope Alpha
 
-host: "localhost:5000"
+# Is this not configurable from swagger ?
+x-prototype_config:
+  production_endpoints:
+    url: http://localhost:5000
 
-# Describe your paths here
 paths:
-  # This is a path endpoint. Change it.
   /status:
     get:
+      x-scope: scope-alpha
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
+      produces:
+        - application/json
       description: |
         gets status of the system
       responses:
@@ -27,6 +43,9 @@ paths:
               message: 'Hello, Status!'
   /alpha:
     get:
+      x-scope: scope-alpha
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
       description: |
         gets Alpha status of the system
       responses:
@@ -39,6 +58,9 @@ paths:
               message: 'Hello, Status!'
   /beta:
     get:
+      x-scope: scope-alpha
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
       description: |
         gets Beta status of the system
       responses:
