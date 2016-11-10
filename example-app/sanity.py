@@ -33,6 +33,7 @@ def main(args=sys.argv):
     host = "http://localhost"
     port = 5000
     endpoints = ("status", "alpha", "beta")
+    debug = True
 
     def to_url(s):
         return "{h}:{p}/{s}".format(h=host, p=port, s=s)
@@ -41,7 +42,10 @@ def main(args=sys.argv):
         url = to_url(endpoint)
         response = rqget(url)
         response.raise_for_status()
-        print response, url
+        if debug:
+            print url, response, response.json()
+        else:
+            print response, url
 
     return 0
 
